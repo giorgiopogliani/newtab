@@ -6,9 +6,11 @@ const { data, status } = await useAsyncData(async () => {
 
 <template>
   <div>
+    <h2>/r/php</h2>
     <div v-if="status != 'pending'">
-      <div v-for="item in data.data.children?.splice(0, 4)">
-        {{ item.data.title }}
+      <div v-for="item in data.data.children?.splice(0, 10)" class="text-sm py-1">
+        <a target="_blank" class="underline" :href="item.data.url">{{ item.data.title }}</a>
+        <p v-html="item.data.selftext" class="line-clamp-2"></p>
       </div>
     </div>
     <div v-else>

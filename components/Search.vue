@@ -7,7 +7,9 @@ const open = (url: string, target: string) => window.open(url, target);
 </script>
 
 <template>
-  <form @submit.prevent="() => open(`https://google.com/search?q=${message}`, '_blank')">
-    <Input v-model="message" autofocus />
-  </form>
+  <div class="flex items-center justify-center w-full h-full">
+    <form @submit.prevent="() => open(`https://google.com/search?q=${message}`, '_blank')" class="w-full">
+      <Input v-model="message" autofocus class="w-full"/>
+    </form>
+  </div>
 </template>
